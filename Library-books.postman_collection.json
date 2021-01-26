@@ -1,0 +1,161 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Library-books",
+		"_postman_id": "cfd6de5a-32c3-4a22-fca3-291065abcfe2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createLibrary",
+			"request": {
+				"url": "localhost:8080/library",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Library 2\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAllLibraries",
+			"request": {
+				"url": "localhost:8080/getAllLibraries",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Book1\",\r\n    \"genre\": \"Romantic\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createBook",
+			"request": {
+				"url": "localhost:8080/1/book",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Game of Thrones\",\r\n    \"genre\": \"Horror\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBooks",
+			"request": {
+				"url": "localhost:8080/getAllBooks",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Book1\",\r\n    \"genre\": \"Romantic\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"url": "localhost:8080/book/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Book 2\",\r\n    \"genre\": \"Genre 2\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook",
+			"request": {
+				"url": "localhost:8080/book/2",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLibrary",
+			"request": {
+				"url": "localhost:8080/library/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updateLibrary",
+			"request": {
+				"url": "localhost:8080/library/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Libsss\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksByLibraryId",
+			"request": {
+				"url": "localhost:8080/getAllBooks/1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Book1\",\r\n    \"genre\": \"Romantic\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -4,6 +4,12 @@
 # Log file
 *.log
 
+.idea/*
+
+target/*
+.DS_Store
+*.iml
+
 # BlueJ files
 *.ctxt
 
