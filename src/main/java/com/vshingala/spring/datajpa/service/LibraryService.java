@@ -24,7 +24,7 @@ public class LibraryService {
 
     public Optional<Library> getLibraryById(Long libraryId) {
         if (!libraryDao.existsById(libraryId)) {
-            throw new ResourceNotFoundException("Library with id " + libraryId + " not found");
+            throw new ResourceNotFoundException("Library with id " + libraryId + " not found.");
         }
         return libraryDao.findById(libraryId);
     }
