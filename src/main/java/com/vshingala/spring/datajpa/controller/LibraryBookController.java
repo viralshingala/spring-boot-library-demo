@@ -2,8 +2,8 @@ package com.vshingala.spring.datajpa.controller;
 
 import com.vshingala.spring.datajpa.entity.Book;
 import com.vshingala.spring.datajpa.entity.Library;
-import com.vshingala.spring.datajpa.service.BookService;
-import com.vshingala.spring.datajpa.service.LibraryService;
+import com.vshingala.spring.datajpa.service.IBookService;
+import com.vshingala.spring.datajpa.service.ILibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +17,10 @@ import java.util.Optional;
 public class LibraryBookController {
 
     @Autowired
-    LibraryService libraryService;
+    ILibraryService libraryService;
 
     @Autowired
-    BookService bookService;
+    IBookService bookService;
 
 
     @RequestMapping(value = "/getAllLibraries", method = RequestMethod.GET)
@@ -69,7 +69,7 @@ public class LibraryBookController {
     }
 
     @RequestMapping(value = "/book/{bookId}", method = RequestMethod.GET)
-    public Optional<Book> getBookById(@PathVariable(value = "bookId") Long bookId) {
+    public Book getBookById(@PathVariable(value = "bookId") Long bookId) {
         return bookService.getBookById(bookId);
     }
 
