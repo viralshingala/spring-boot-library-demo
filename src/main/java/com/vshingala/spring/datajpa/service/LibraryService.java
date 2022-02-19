@@ -1,5 +1,6 @@
 package com.vshingala.spring.datajpa.service;
 
+import com.vshingala.spring.datajpa.exception.NoDataFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
@@ -13,12 +14,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class LibraryService {
+public class LibraryService implements ILibraryService {
     @Autowired
     LibraryDao libraryDao;
 
     public List<Library> getLibraries() {
-        return libraryDao.findAll();
+        List<Library> libraries = libraryDao.findAll();
+        if(libraries.size() > 0) {
+            return libraryDao.findAll();
+        }
+        throw new NoDataFoundException("No Library data found");
     }
 
 

@@ -1,5 +1,6 @@
 package com.vshingala.spring.datajpa.service;
 
+import com.vshingala.spring.datajpa.exception.BookNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
-public class BookService {
-
+public class BookService implements IBookService {
 
     @Autowired
     BookDao bookDao;
@@ -32,14 +32,9 @@ public class BookService {
             return bookDao.findAll();
     }
 
-
-    public Optional<Book> getBookById(Long bookId) {
-        if (!bookDao.existsById(bookId)) {
-            throw new ResourceNotFoundException("Book with id " + bookId + " not found");
-        }
-        return bookDao.findById(bookId);
+    public Book getBookById(Long bookId) {
+        return bookDao.findById(bookId).orElseThrow(() -> new BookNotFoundException((bookId)));
     }
-
 
     public Book createBook(Long linraryId, Book book) {
         Set<Book> books = new HashSet<>();
