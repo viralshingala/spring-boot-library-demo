@@ -14,6 +14,7 @@ import java.util.Optional;
 
 
 @RestController
+@CrossOrigin()
 public class LibraryBookController {
 
     @Autowired
@@ -79,7 +80,7 @@ public class LibraryBookController {
         return bookService.updateBookById(bookId, book);
     }
 
-    @RequestMapping(value = "/book/{bookId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/book/{bookId}", method = RequestMethod.POST)
     public ResponseEntity<Object> deleteBookById(@PathVariable(value = "bookId") long bookId) {
         return bookService.deleteBookById(bookId);
     }

@@ -19,7 +19,7 @@ public class LibraryService implements ILibraryService {
     @Autowired
     LibraryDao libraryDao;
 
-    @Cacheable(value="libraries")
+//    @Cacheable(value="libraries")
     public List<Library> getLibraries() {
         List<Library> libraries = libraryDao.findAll();
         if(libraries.size() > 0) {
