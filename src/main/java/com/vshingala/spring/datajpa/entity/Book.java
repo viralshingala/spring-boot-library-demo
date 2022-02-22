@@ -32,10 +32,9 @@ public class Book  implements Serializable {
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "LibraryId", nullable = false)
+    @JoinColumn(name = "Library_Id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Library library;
-
 
     public Book() {
     }

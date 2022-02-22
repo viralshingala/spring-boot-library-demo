@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface BookDao extends JpaRepository<Book, Long> {
 
-    List<Book> findAllByLibrary_id(Long libraryId);
+    List<Book> findAllByLibraryId(Long libraryId);
 
 }

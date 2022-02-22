@@ -27,7 +27,7 @@ public class BookService implements IBookService {
 
     public List<Book> getAllBooks(Long libraryId) {
         if (libraryId != null)
-            return bookDao.findAllByLibrary_id(libraryId);
+            return bookDao.findAllByLibraryId(libraryId);
         else
             return bookDao.findAll();
     }
